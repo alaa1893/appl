@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مساعدة مجانية</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div id="login-section">
+    <h1>مرحبا بك في منصة المساعدة</h1>
+    <button id="google-login">تسجيل الدخول بحساب Google</button>
+  </div>
+
+  <div id="main-section" style="display:none;">
+    <h2>طلب مساعدة جديدة</h2>
+    <form id="help-form">
+      <input type="text" id="name" placeholder="الاسم" readonly required>
+      <select id="help-type" required>
+        <option value="">نوع المساعدة</option>
+        <option value="تعليمي">تعليمي</option>
+        <option value="مالي">مالي</option>
+        <option value="نصائح">نصائح</option>
+      </select>
+      <textarea id="description" placeholder="صف المساعدة المطلوبة" required></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+
+    <h2>الطلبات السابقة</h2>
+    <ul id="requests-list"></ul>
+
+    <button id="logout">تسجيل الخروج</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
